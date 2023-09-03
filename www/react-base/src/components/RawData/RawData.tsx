@@ -53,7 +53,13 @@ export const RawData = ({data}: RawDataProps) => {
 
   const renderDataElement = (value: any) => {
     if (!isObjectRaw(value) && !isArrayOfObjectsRaw(value)) {
-      return <dd>{value === null ? "null" : value.toString()}&nbsp;</dd>;
+      if (value === null) {
+        return <dd>null&nbsp;</dd>;
+      } else if (value === undefined) {
+        return <dd>undefined&nbsp;</dd>;
+      } else {
+        return <dd>{value.toString()}&nbsp;</dd>;
+      }
     }
     if (isArrayOfObjectsRaw(value)) {
       return (
