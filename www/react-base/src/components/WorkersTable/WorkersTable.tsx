@@ -141,7 +141,7 @@ export const WorkersTable = observer(({workers, buildersQuery, mastersQuery,
         <th key="state">State</th>
         <th key="masters">Masters</th>
         <th key="name">WorkerName</th>
-        { buildsForWorker === null ? <></> : <th key="builds">Recent Builds</th> }
+        <th key="builds">Recent Builds</th>
         { workerInfoNamesToDisplay.map(name => <th key={"info-" + name}>{name}</th>) }
       </tr>
       </thead>
